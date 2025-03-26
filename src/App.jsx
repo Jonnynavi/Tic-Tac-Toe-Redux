@@ -1,5 +1,13 @@
+import Board from "./components/Board";
+import ScoreBoard from "./components/ScoreBoard";
+
 function App(){
-    return <div>App</div>
+    return(
+        <div>
+            <Board/>
+            <ScoreBoard />           
+        </div>
+    )
 }
 
 export default App;
