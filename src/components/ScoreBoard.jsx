@@ -20,7 +20,7 @@ function ScoreBoard(){
 
     return(
         <div className="box score-board">
-            <div className={playersTurn == 'x'? "has-text-danger has-text-weight-bold": ""}><p>Player 1:  {player1Score}</p></div>
+            <div className={playersTurn == 'x'? "has-text-danger has-text-weight-bold": ""}><p>Player 1: {player1Score}</p></div>
             <div className={playersTurn == 'o'? "has-text-danger has-text-weight-bold": ""}><p>Player 2: {player2Score}</p></div>
             <div><p>Draws: {draws}</p></div>
         </div>
