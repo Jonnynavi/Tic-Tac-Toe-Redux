@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 function App(){
     const gameOver = useSelector(state => state.game.gameOver);
     return(
-        <div>
+        <div className="app">
             <GameBoard/>
             <ScoreBoard />    
             {gameOver && <GameOverPanel />}       

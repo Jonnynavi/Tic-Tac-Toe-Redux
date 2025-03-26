@@ -12,7 +12,8 @@ function GameOverPanel(){
     return ReactDOM.createPortal(
         <div className="game-over-panel">
             <div className="box">
-                <h1>Player {winner} Wins!</h1>
+                <h1 className='is-capitalized'>{winner == 'Draw' ? "Draw!" : `Player ${winner} Wins!`}</h1>
+                <hr/>
                 <button className='button' onClick={handlePlayAgain}>Play Again?</button>
             </div>
         </div>,

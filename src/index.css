@@ -1,8 +1,11 @@
 div#root {
     display: flex;
-    height: 95vh;
+    height: 100vh;
     justify-content: center;
     align-items: center;
+    background-image: url("https://wallpapers.com/images/featured/pokemon-landscape-yf5odhgkds0n53yl.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 .game-board {
     height: 1000px;
@@ -20,12 +23,14 @@ div#root {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 101px;
 }
 .box.score-board div {
     width: 32.75%;
 }
 .box.score-board {
     display: flex;
+    background-color: #ffffff54;
 }
 .game-over-panel {
     background-color: rgb(222 222 222 / 80%);
@@ -43,4 +48,8 @@ div#root {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+.box.game-board {
+    background-color: #ffffff54;
+    border: black 1px solid;
 }
