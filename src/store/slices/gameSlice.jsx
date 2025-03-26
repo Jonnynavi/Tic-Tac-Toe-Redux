@@ -15,19 +15,21 @@ const checkGame = (board) =>{
     }
 }
 
+const initialState = {
+    board: ["","","","","","","","",""],
+    currentPlayer: "x",
+    winner: null,
+    gameOver: false
+}
+
 const gameSlice = createSlice({
     name: "game",
-    initialState: {
-        board: ["","","","","","","","",""],
-        playersTurn: "x",
-        winner: null,
-        gameOver: false
-    },
+    initialState,
     reducers: {
         playersAction(state, action){
             const position = action.payload;
             if(!state.board[position] && !state.gameOver){
-                state.board[position] = state.playersTurn;
+                state.board[position] = state.currentPlayer;
                 switch(checkGame(state.board)){
                     case 'x':
                         state.winner = 'x';
@@ -44,11 +46,15 @@ const gameSlice = createSlice({
                 }
             };
             if(!state.gameOver){
-                state.playersTurn = state.playersTurn == 'o' ? 'x' : 'o';
+                state.currentPlayer = state.currentPlayer == 'o' ? 'x' : 'o';
             }
         },
+        reset(state, action){
+            state = initialState;
+            return state;
+        }
     },
 });
 
-export const { playersAction } = gameSlice.actions;
+export const { playersAction, reset } = gameSlice.actions;
 export const gameReducer = gameSlice.reducer;

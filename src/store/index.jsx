@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { playersReducer, updateScore } from "./slices/playersSlice";
-import { gameReducer, playersAction } from "./slices/gameSlice";
+import { gameReducer, playersAction, reset } from "./slices/gameSlice";
 
 const store = configureStore({
     reducer: {
@@ -9,4 +9,4 @@ const store = configureStore({
     },
 });
 
-export { store, updateScore, playersAction }
+export { store, updateScore, playersAction, reset }

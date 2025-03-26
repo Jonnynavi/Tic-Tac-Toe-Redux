@@ -10,10 +10,10 @@ const playersSlice = createSlice({
     reducers: {
         updateScore(state, action){
             switch(action.payload){
-                case player1:
+                case 'x':
                     state.player1 += 1
                     break;
-                case player2:
+                case 'o':
                     state.player2 += 1
                     break;
                 default:
