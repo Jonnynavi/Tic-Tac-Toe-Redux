@@ -15,3 +15,39 @@ const checkGame = (board) =>{
         }
     }
 }
+
+const gameSlice = createSlice({
+    name: "game",
+    initialState: {
+        board: ["","","","","","","","",""],
+        playersTurn: "x",
+        winner: null,
+        gameOver: false
+    },
+    reducers: {
+        playersAction(state, action){
+            const {position} = action.payload;
+            if(!board[position] && !state.gameOver){
+                state.board[position] = state.playersTurn;
+                switch(checkGame(state.board)){
+                    case 'x':
+                        state.winner = 'x';
+                        state.gameOver = true
+                        break;
+                    case 'o':
+                        state.winner = "o";
+                        state.gameOver = true
+                        break;
+                    case 'Draw':
+                        state.winner = "Draw"
+                        state.gameOver = true
+                        break;
+                }
+            };
+
+        },
+    },
+});
+
+export const { playersAction } = gameSlice.actions;
+export const gameReducer = gameSlice.reducer;
