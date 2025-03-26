@@ -27,3 +27,19 @@ div#root {
 .box.score-board {
     display: flex;
 }
+.game-over-panel {
+    background-color: rgb(222 222 222 / 80%);
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.game-over-panel .box {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

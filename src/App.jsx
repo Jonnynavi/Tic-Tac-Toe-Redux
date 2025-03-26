@@ -1,11 +1,15 @@
 import GameBoard from "./components/GameBoard";
 import ScoreBoard from "./components/ScoreBoard";
+import GameOverPanel from "./components/GameOverPanel";
+import { useSelector } from "react-redux";
 
 function App(){
+    const gameOver = useSelector(state => state.game.gameOver);
     return(
         <div>
             <GameBoard/>
-            <ScoreBoard />           
+            <ScoreBoard />    
+            {gameOver && <GameOverPanel />}       
         </div>
     )
 }
